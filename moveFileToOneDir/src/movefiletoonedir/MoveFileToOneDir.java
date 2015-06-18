@@ -37,7 +37,7 @@ public class MoveFileToOneDir {
                     if(new File(destDir.getAbsolutePath()+"/"+fileName+ext).exists()){
                         ext="_"+i++;
                     }else{
-                        file.renameTo(new File(destDir.getAbsolutePath()+"/"+fileName+ext));
+                        file.renameTo(new File(destDir.getAbsolutePath()+"/"+fileName.substring(0,fileName.lastIndexOf("."))+ext+fileName.substring(fileName.lastIndexOf("."),fileName.length())));
                         i=1;
                         break;
                     }
