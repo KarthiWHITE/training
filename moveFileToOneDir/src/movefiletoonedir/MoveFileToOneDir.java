@@ -29,7 +29,6 @@ public class MoveFileToOneDir {
             if(file.isDirectory()){
                 moveFile(file);
             }else if(file.isFile() && !file.isHidden()){
-                
                 int i=1;
                 String ext=""; 
                 String fileName=file.getName();
@@ -68,7 +67,7 @@ public class MoveFileToOneDir {
     
     
     public static File getDir() throws IOException{
-        File dir=new File(System.getProperty("user.home"));
+        File dir;
         BufferedReader in= new BufferedReader(new InputStreamReader(System.in));
         while(true){
             System.out.println("Enter the path from the root : "+ new File(System.getProperty("user.home")).getAbsolutePath());
@@ -76,7 +75,7 @@ public class MoveFileToOneDir {
             if(dir.exists()){
                 return dir;
             }else{
-                System.out.println("The directory "+ dir.getAbsolutePath()+" is not valid");
+                System.out.println("The directory "+ dir.getAbsolutePath()+" is not valid :(");
             }
         }
     }
