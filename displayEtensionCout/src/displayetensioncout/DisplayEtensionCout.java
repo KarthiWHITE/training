@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
+import org.apache.commons.io.FilenameUtils;
 
 /**
  *
@@ -43,6 +44,12 @@ public class DisplayEtensionCout {
         //System.out.println(root);
     }
 
+    /**
+     * this method will read all the files to list. it read the files form its
+     * sub directories too
+     *
+     * @param direcotry is source directory
+     */
     public void listFiles(File direcotry) {
         for (File f : direcotry.listFiles()) {
             if (f.isDirectory()) {
@@ -53,38 +60,49 @@ public class DisplayEtensionCout {
         }
     }
 
+    /**
+     * This method will count the files by its extension and store it in the map
+     * which contains the extension and count pair
+     */
     public void countExtention() {
 
         Map<String, Integer> countMap = new HashMap<String, Integer>();
 
-        for (ListIterator<File> itr = listFile.listIterator(); itr.hasNext();) {
-            File f = itr.next();
+        for (File f : listFile) {
             String fileName = f.getName();
-            if (fileName.lastIndexOf(".") != -1) {
-                String extension = fileName.substring(fileName.lastIndexOf("."), fileName.length());
-                if(countMap.containsKey(extension)){
-                    countMap.replace(extension, countMap.get(extension), countMap.get(extension)+1);
-                }else{
+            if (!FilenameUtils.getExtension(fileName).isEmpty()) {
+                String extension = FilenameUtils.getExtension(fileName);
+                if (countMap.containsKey(extension)) {
+                    countMap.replace(extension, countMap.get(extension), countMap.get(extension) + 1);
+                } else {
                     countMap.put(extension, 1);
+                }
+            } else {
+                if (countMap.containsKey("with out extension")) {
+                    countMap.replace("with out extension", countMap.get("with out extension"), countMap.get("with out extension") + 1);
+                } else {
+                    countMap.put("with out extension", 1);
                 }
             }
 
         }
         printCount(countMap);
     }
-    
-    
-    private void printCount(Map<String,Integer> map){
-        
-        Set<String> KeySet=map.keySet();
-      
-        Iterator<String> itr=KeySet.iterator();
-       
-        while(itr.hasNext()){
-        
-            String key= itr.next();
-            
-            System.out.println(key +" : "+ map.get(key));
+
+    /**
+     * this method will print the count by extension from the map.
+     *
+     * @param map
+     */
+    private void printCount(Map<String, Integer> map) {
+
+        Set<String> KeySet = map.keySet();
+
+        Iterator<String> itr = KeySet.iterator();
+
+        while (itr.hasNext()) {
+            String key = itr.next();
+            System.out.println(key + " : " + map.get(key));
         }
     }
 

@@ -31,53 +31,57 @@ public class WordCountTxt {
         this.dest = dest;
     }
 
-    public void wcToTxtFile(){
+    /**
+     * This method will read the file and count the word counts and write it in
+     * new file
+     */
+    public void wcToTxtFile() {
 
         try {
-            
-            FileInputStream fin = new FileInputStream(src);
-            
-            byte[] bytes=new byte[fin.available()];
-            
-            fin.read(bytes);
-            
-            String str=new String(bytes);
-            
-            String[] arrStr=str.split(" ");
-            
+
+            FileInputStream fin = new FileInputStream(src); //create file input stream to read the data
+
+            byte[] bytes = new byte[fin.available()];
+
+            fin.read(bytes);                                // read the bytes from file
+
+            String str = new String(bytes);
+
+            String[] arrStr = str.split(" ");
+
             Arrays.sort(arrStr);
-            
-            HashMap<String, Integer> map= new HashMap<String, Integer>();
-         
-            for(String s:arrStr){
-                if(map.containsKey(s)){
-                    map.replace(s, map.get(s), map.get(s)+1);
-                }else{
+
+            HashMap<String, Integer> map = new HashMap<String, Integer>();
+
+            //count the occurrence of the words on the file
+            for (String s : arrStr) {
+                if (map.containsKey(s)) {
+                    map.replace(s, map.get(s), map.get(s) + 1);
+                } else {
                     map.put(s, 1);
                 }
             }
-            
-            FileOutputStream fout= new FileOutputStream(dest);
-            
-            Object[] keyarr=map.keySet().toArray();
-            
+
+            FileOutputStream fout = new FileOutputStream(dest);
+
+            Object[] keyarr = map.keySet().toArray();
+
             Arrays.sort(keyarr);
-            
-            for(Object s:keyarr){
-                String w= (String)s+" : "+ map.get((String)s).toString()+"\n";
-                
+
+            // write the words along with its count in a ooutput file
+            for (Object s : keyarr) {
+                String w = (String) s + " : " + map.get((String) s).toString() + "\n";
+
                 fout.write(w.getBytes());
-            
+
             }
             fin.close();
             fout.close();
-            
 
         } catch (FileNotFoundException ex) {
             System.out.println("File not found");
-        }catch(Exception e){}
-        
-        
+        } catch (Exception e) {
+        }
         System.out.println("Success");
 
     }
@@ -95,11 +99,18 @@ public class WordCountTxt {
         dest = getDir();
 
         WordCountTxt wc = new WordCountTxt(src, dest);
-        
+
         wc.wcToTxtFile();
 
     }
 
+    /**
+     * This method will read the path for the file and return the path this read
+     * option will repeat until the path or file is valid one
+     *
+     * @return File object
+     * @throws IOException it throws the IOException
+     */
     public static File getDir() throws IOException {
         File file;
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
