@@ -43,7 +43,9 @@ public class SearchWordInFile {
         System.out.println("Enter the word to seach in the file :");
         searchWodrd = in.readLine();
     }
-
+/**
+ * this method will search the given word in the source file and write its positions in a another file
+ */
     public void search() {
 
         try {
@@ -52,10 +54,10 @@ public class SearchWordInFile {
             dest.createNewFile();
             FileOutputStream fout = new FileOutputStream(dest);
             
-            byte[] b= new byte[fin.available()];            
+            byte[] b= new byte[fin.available()];    // create array of bytes to read from fin        
             fin.read(b);
 
-            String[] lines= new String(b).split("\n");
+            String[] lines= new String(b).split("\n"); //create list of stringd each has a single line
             
             for(int i=0;i<lines.length;i++){
                 
@@ -65,18 +67,17 @@ public class SearchWordInFile {
                 
                 boolean isWordAvailable=false;
                 int indx=line.indexOf(searchWodrd);
+                
                 while(indx!=-1){
                     
-                    reslt+=indx+",";
+                    reslt+=indx+",";  //store the index values in variable
                     
                     isWordAvailable=true;
                     
-                    
-                    
-                    int d=line.substring(indx+searchWodrd.length()).indexOf(searchWodrd);
+                    int d=line.substring(indx+searchWodrd.length()).indexOf(searchWodrd); //search the index for next occurrence in the remaining line
                     
                     if(d!=-1){
-                        indx=indx+searchWodrd.length()+d;
+                        indx=indx+searchWodrd.length()+d;  //calculate the orignal index in the current line
                     }else{
                         indx=d;
                     }
@@ -85,7 +86,7 @@ public class SearchWordInFile {
                 
                 if(isWordAvailable){
                     reslt+="\n";
-                    fout.write(reslt.getBytes());
+                    fout.write(reslt.getBytes()); //write the qout put to the file if the word is present
                 }
             }
             
