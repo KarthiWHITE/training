@@ -21,8 +21,9 @@ public class MoveFileToOneDir {
      * This method will call from out side of the class
      */
     public void moveFiles() {
+        int oldSize=destDir.listFiles().length;
         moveFile(srcDir);
-        System.out.println(destDir.listFiles().length + " files moved successfully");
+        System.out.println(destDir.listFiles().length -oldSize + " files moved successfully");
     }
 
     /**
@@ -47,7 +48,8 @@ public class MoveFileToOneDir {
                     if (new File(destDir.getAbsolutePath() + "/" + FilenameUtils.removeExtension(fileName) + ext + "." + FilenameUtils.getExtension(fileName)).exists()) {
                         ext = "_" + i++;
                     } else {
-                        file.renameTo(new File(destDir.getAbsolutePath() + "/" + FilenameUtils.removeExtension(fileName) + ext + "." + FilenameUtils.getExtension(fileName)));
+                        String extension=FilenameUtils.getExtension(fileName);
+                        file.renameTo(new File(destDir.getAbsolutePath() + "/" + FilenameUtils.removeExtension(fileName) + ext + ((extension.length()>0)?"."+extension:"")));
                         ext = "";
                         i = 1;
                         break;

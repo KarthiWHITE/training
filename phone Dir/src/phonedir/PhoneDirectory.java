@@ -34,16 +34,14 @@ public class PhoneDirectory{
    
        List<Contact> resultContacts=new ArrayList<Contact>();
        
-       for(ListIterator<Contact> itr=cList.listIterator();itr.hasNext();){
-          
-           Contact c=itr.next();
+       for(Contact c:cList){
            
            if(c.mobile.equals(cellNo)||c.home.equals(cellNo)||c.work.equals(cellNo))
                resultContacts.add(c);
               
        }
        
-       if(resultContacts.size()==0){
+       if(resultContacts.isEmpty()){
            System.out.println("There is no contact info with CellNo : " + cellNo);
        }else{
            System.out.println("The contact info for cell No "+cellNo+" is : ");

@@ -39,7 +39,8 @@ public class SearchWordInFile {
             src = new File(root + in.readLine());
 
         } while (!(src.isFile() && src.canRead()));
-       
+       // check the file has read permission or not
+        
         System.out.println("Enter the word to seach in the file :");
         searchWodrd = in.readLine();
     }
@@ -85,6 +86,7 @@ public class SearchWordInFile {
                 }
                 
                 if(isWordAvailable){
+                    reslt=reslt.substring(0,reslt.length()-1);
                     reslt+="\n";
                     fout.write(reslt.getBytes()); //write the qout put to the file if the word is present
                 }
