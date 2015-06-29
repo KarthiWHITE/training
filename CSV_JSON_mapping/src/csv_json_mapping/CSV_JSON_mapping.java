@@ -30,8 +30,6 @@ import org.apache.commons.csv.CSVPrinter;
 import org.apache.commons.csv.CSVRecord;
 import org.apache.commons.io.FilenameUtils;
 import org.json.*;
-import sun.util.BuddhistCalendar;
-import sun.util.calendar.Gregorian;
 /**
  *
  * @author cb-admin1
@@ -103,8 +101,12 @@ public class CSV_JSON_mapping {
             if(ctype==colType.STRING){
                 ;
             }else if(ctype==colType.DATE){
-               ;
-
+                if(!val.equals("")){
+                    DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                DateFormat targetFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+                Date d=originalFormat.parse(val);
+                val = targetFormat.format(d);
+                }    
                 
             }else if(ctype==colType.MULTISTRING){
                 JSONArray arr=confObj.getJSONArray(colkey);
@@ -183,10 +185,10 @@ public class CSV_JSON_mapping {
        
         CSV_JSON_mapping cs=new CSV_JSON_mapping(getPath("csv"),getPath("csv"),getPath("json"));
        // File f1=new File(System.getProperty("user.home")+"/myrepo/training/extfiles/sample-input.csv");
-       // File f2=new File(System.getProperty("user.home")+"/myrepo/training/extfiles/sample-output.csv");
-       /// File f3=new File(System.getProperty("user.home")+"/myrepo/training/extfiles/config.json");
+        //File f2=new File(System.getProperty("user.home")+"/myrepo/training/extfiles/sample-output.csv");
+        //File f3=new File(System.getProperty("user.home")+"/myrepo/training/extfiles/config.json");
         
-       // CSV_JSON_mapping cs=new CSV_JSON_mapping(f1, f2, f3);
+        //CSV_JSON_mapping cs=new CSV_JSON_mapping(f1, f2, f3);
         cs.map();
         
     }
