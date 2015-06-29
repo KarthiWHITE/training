@@ -1,0 +1,20 @@
+{
+    "Customer Id":"Customer Id",
+    "Subscription Id":"Subscription Id",
+    "Invoice Id":"Invoice Number",
+    "Invoice Date":"Invoice Date",
+    "Start Date":"Start Date",
+    "Amount":"Amount",
+    "Status":"Status",
+    "Paid On":"Paid On",
+    "Next Retry":"Next Retry",
+    "Refunded Amount":"Refunded Amount",
+    "Recurring":"Recurring",
+    "First Invoice":"First Invoice",
+    "Tax Total":"Tax Total",
+    "Customer Details":["Customer First Name","Customer Last Name","Customer Email","Customer Company"]
+    
+}
+
+
+

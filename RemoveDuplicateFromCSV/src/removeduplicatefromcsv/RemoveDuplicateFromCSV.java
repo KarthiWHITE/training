@@ -65,6 +65,7 @@ public class RemoveDuplicateFromCSV {
             for(CSVRecord re:li){
                 if(!list.contains(re.toString())){
                     list.add(re.toString());
+                    System.out.println(re.toString());
                     printer.printRecord(re); //write the record in the file if the record is not available in the list
                 }
                 

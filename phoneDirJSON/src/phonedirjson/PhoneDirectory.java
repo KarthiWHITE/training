@@ -114,7 +114,7 @@ public class PhoneDirectory{
               
        }
        
-       if(resultContacts.size()==0){
+       if(resultContacts.isEmpty()){
            System.out.println("There is no contact info with name : " + name);
        }else{
            System.out.println("The contact info for name "+name+" is : ");

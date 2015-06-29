@@ -34,11 +34,10 @@ public class PhoneDirectory{
         
         List<CSVRecord> records=parser.getRecords();
         
-        for(int i=1;i<records.size();i++){
-            CSVRecord re=records.get(i);
+        for(CSVRecord re:records){
             cList.add(new Contact(re.get(0), re.get(1), re.get(2), re.get(3)));
         }
-        System.out.println(cList.size());
+        
    
    }
    
@@ -107,7 +106,7 @@ public class PhoneDirectory{
               
        }
        
-       if(resultContacts.size()==0){
+       if(resultContacts.isEmpty()){
            System.out.println("There is no contact info with name : " + name);
        }else{
            System.out.println("The contact info for name "+name+" is : ");

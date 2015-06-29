@@ -1,0 +1,17 @@
+{
+    "Customer Id":["Customer Id","String"],
+    "Subscription Id":["Subscription Id","String"],
+    "Invoice Id":["Invoice Number","String"],
+    "Invoice Date":["Invoice Date","Date"],
+    "Start Date":["Start Date","Date"],
+    "Amount":["Amount","Money"],
+    "Status":["Status","Boolean"],
+    "Paid On":["Paid On","String"],
+    "Next Retry":["Next Retry","Date"],
+    "Refunded Amount":["Refunded Amount","Money"],
+    "Recurring":["Recurring","Boolean"],
+    "First Invoice":["First Invoice","Boolean"],
+    "Tax Total": ["Tax Total","Money"],
+    "Customer Details":[["Customer First Name","Customer Last Name","Customer Email","Customer Company"],"Multystring"]   
+}
+        
