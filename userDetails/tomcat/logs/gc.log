@@ -1,0 +1,6 @@
+Java HotSpot(TM) 64-Bit Server VM (25.5-b02) for linux-amd64 JRE (1.8.0_05-b13), built on Mar 18 2014 00:29:27 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+Memory: 4k page, physical 8052100k(2925340k free), swap 8261628k(8261628k free)
+CommandLine flags: -XX:InitialHeapSize=1073741824 -XX:MaxGCPauseMillis=500 -XX:MaxHeapSize=1073741824 -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseG1GC 
+2.364: [GC pause (G1 Evacuation Pause) (young) 52M->10M(1024M), 0.0190777 secs]
+2.591: [GC pause (G1 Evacuation Pause) (young) 69M->20M(1024M), 0.0146395 secs]
+789.796: [Full GC (Metadata GC Threshold)  297M->51M(1024M), 0.1088202 secs]

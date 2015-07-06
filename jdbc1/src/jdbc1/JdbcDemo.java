@@ -13,15 +13,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-/**
- *
- * @author cb-admin1
- */
 public class JdbcDemo {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Connection con;
         PreparedStatement smt;
