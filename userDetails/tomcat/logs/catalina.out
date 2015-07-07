@@ -49,3 +49,7 @@ Listening for transport dt_socket at address: 9000
 06-Jul-2015 09:01:57.290 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1470 ms
 06-Jul-2015 09:51:47.509 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
 06-Jul-2015 09:51:48.179 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+06-Jul-2015 19:34:23.861 INFO [Thread-4] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-9090"]
+06-Jul-2015 19:34:23.864 INFO [Thread-4] org.apache.catalina.core.StandardService.stopInternal Stopping service Catalina
+06-Jul-2015 19:34:23.904 INFO [Thread-4] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-9090"]
+06-Jul-2015 19:34:23.910 INFO [Thread-4] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-9090"]
