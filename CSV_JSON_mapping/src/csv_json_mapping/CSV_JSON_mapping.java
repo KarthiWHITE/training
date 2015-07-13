@@ -29,14 +29,16 @@ import org.json.*;
  * @author cb-admin1
  */
 public class CSV_JSON_mapping {
+
     File src, dest, conf;
     Iterator<String> headerSet;
     //Map<String, colType> colMap = new HashMap<>();
     //Map<String, String> conMap = new HashMap<>();
-    List<MapObj> mapList=new ArrayList();
+    List<MapObj> mapList = new ArrayList();
     JSONObject confObj;
-    
+
     public enum colType {
+
         STRING, DATE, BOOLEAN, MONEY, MULTISTRING;
     }
 
@@ -54,10 +56,10 @@ public class CSV_JSON_mapping {
         Iterable<CSVRecord> srcRecords;
         srcRecords = CSVFormat.EXCEL.withHeader().parse(new FileReader(src));
         headerSet = confObj.keys();
-        List l=new ArrayList();
+        List l = new ArrayList();
         while (headerSet.hasNext()) {
             l.add(headerSet.next());
-            
+
         }
         printer.printRecord(l);
         //printer.printRecord(headerSet);
@@ -74,7 +76,7 @@ public class CSV_JSON_mapping {
     private List<String> formetter(CSVRecord record) throws JSONException, ParseException {
         List<String> out = new ArrayList<>();
         //while (headerSet.hasNext()) {
-        for(MapObj mo:mapList){
+        for (MapObj mo : mapList) {
             String colkey = mo.toCon; //headerSet.next();
             colType ctype = mo.col;//colType.BOOLEAN;// colMap.get(colkey);
             String colVal = mo.frmCon;//"sd"; conMap.get(colkey);
@@ -82,33 +84,63 @@ public class CSV_JSON_mapping {
             if (ctype != colType.MULTISTRING) {
                 val = record.get(colVal);
             }
-            if (ctype == colType.STRING) {
-                ;
-            } else if (ctype == colType.DATE) {
-                if (!val.equals("")) {
-                    DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-                    DateFormat targetFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
-                    Date d = originalFormat.parse(val);
-                    val = targetFormat.format(d);
-                    val=targetFormat.parse(val).toString();
-                }
-
-            } else if (ctype == colType.MULTISTRING) {
-                JSONArray arr = confObj.getJSONArray(colkey);
-                arr = arr.getJSONArray(0);
-                JSONObject custDetails = new JSONObject();
-                for (int i = 0; i < arr.length(); i++) {
-                    String key = arr.getString(i);
-                    String newCol = key.replace("Customer ", "");
-                    custDetails.put(newCol, record.get(key));
-                }
-                val = custDetails.toString();
-            } else if (ctype == colType.MONEY) {
-                val = (Float.parseFloat(val) / 100) + "";
-            } else if (ctype == colType.BOOLEAN) {
-                ;
+            switch (ctype) {
+                case STRING:
+                    break;
+                case DATE:
+                    if (!val.equals("")) {
+                        DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+                        DateFormat targetFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+                        Date d = originalFormat.parse(val);
+                        val = targetFormat.format(d);
+                        val = targetFormat.parse(val).toString();
+                    }
+                    break;
+                case MULTISTRING:
+                    JSONArray arr = confObj.getJSONArray(colkey);
+                    arr = arr.getJSONArray(0);
+                    JSONObject custDetails = new JSONObject();
+                    for (int i = 0; i < arr.length(); i++) {
+                        String key = arr.getString(i);
+                        String newCol = key.replace("Customer ", "");
+                        custDetails.put(newCol, record.get(key));
+                    }
+                    val = custDetails.toString();
+                    break;
+                case MONEY:
+                    val = (Float.parseFloat(val) / 100) + "";
+                    break;
+                case BOOLEAN:
+                    break;
             }
 
+            /*
+             if (ctype == colType.STRING) {
+             ;
+             } else if (ctype == colType.DATE) {
+             if (!val.equals("")) {
+             DateFormat originalFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+             DateFormat targetFormat = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss");
+             Date d = originalFormat.parse(val);
+             val = targetFormat.format(d);
+             val=targetFormat.parse(val).toString();
+             }
+
+             } else if (ctype == colType.MULTISTRING) {
+             JSONArray arr = confObj.getJSONArray(colkey);
+             arr = arr.getJSONArray(0);
+             JSONObject custDetails = new JSONObject();
+             for (int i = 0; i < arr.length(); i++) {
+             String key = arr.getString(i);
+             String newCol = key.replace("Customer ", "");
+             custDetails.put(newCol, record.get(key));
+             }
+             val = custDetails.toString();
+             } else if (ctype == colType.MONEY) {
+             val = (Float.parseFloat(val) / 100) + "";
+             } else if (ctype == colType.BOOLEAN) {
+             ;
+             }*/
             out.add(val);
 
         }
@@ -124,13 +156,13 @@ public class CSV_JSON_mapping {
             confObj = new JSONObject(new String(b));
            // headerSet = confObj.keys();
             //while (headerSet.hasNext()) {
-                //String key = headerSet.next();
-            for(Iterator<String> it=confObj.keys();it.hasNext();){
-                String key=it.next();
+            //String key = headerSet.next();
+            for (Iterator<String> it = confObj.keys(); it.hasNext();) {
+                String key = it.next();
                 JSONArray arr = (JSONArray) confObj.get(key);
                 //conMap.put(key, arr.get(0).toString());
                 //colMap.put(key, getColType((String) (arr.get(1))));
-                mapList.add(new MapObj(arr.get(0).toString(), key,getColType((String)(arr.get(1)))));
+                mapList.add(new MapObj(arr.get(0).toString(), key, getColType((String) (arr.get(1)))));
             }
 
         } catch (IOException e) {
@@ -139,9 +171,9 @@ public class CSV_JSON_mapping {
             System.out.println("Parser error");
         }
     }
-    
-    private void printlist(List<MapObj> m){
-        for(MapObj mo:m){
+
+    private void printlist(List<MapObj> m) {
+        for (MapObj mo : m) {
             System.out.println(mo.toCon);
         }
         System.exit(0);
