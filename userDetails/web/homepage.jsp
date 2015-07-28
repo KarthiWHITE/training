@@ -32,11 +32,18 @@
         </script>
     </head>
     <body>
+         <%
+                        User user=(User)request.getAttribute("curuser");
+                       if(user==null){
+                           getServletConfig().getServletContext().getRequestDispatcher("/usrlogin").forward(request, response);
+                       }
+        %>
         <% if(request.getSession().getAttribute("userid")==null){
             response.sendRedirect("login.jsp");
         }else{ %>
         <div class="pageheading">Welcome Mr. <%=request.getSession(true).getAttribute("username").toString() %><a href="logout">Logout</a></div>
         <%}%>
+       
         <div class="cont-wrapper">
             <div class="cont-menu">
                 <ul>
@@ -46,10 +53,7 @@
             </div>
             <div class="cont">
                 <div class="change-address sub-cont">
-                    <%
-                        User user=(User)request.getAttribute("curuser");
-                       
-                    %>
+                    
                     <form class="addrss-update" method="post" action="updateaddress">
                         <input type="hidden" name="address" value="<%=user.addValid%>"/>
                         <div class="input-grp">

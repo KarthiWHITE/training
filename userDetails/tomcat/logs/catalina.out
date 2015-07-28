@@ -169,3 +169,4 @@ Listening for transport dt_socket at address: 9000
 28-Jul-2015 18:17:03.493 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
 28-Jul-2015 18:17:04.121 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
 Listening for transport dt_socket at address: 9000
+Listening for transport dt_socket at address: 9000
