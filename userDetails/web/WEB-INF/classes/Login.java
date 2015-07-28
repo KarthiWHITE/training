@@ -4,13 +4,10 @@
  * and open the template in the editor.
  */
 
-
+import utils.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,16 +19,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import utils.DbUtils;
 
 /**
  *
  * @author cb-admin1
  */
+public class Login extends HttpServlet {
 
-public class UserSignUp extends HttpServlet {
-    
-    Connection con;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -42,27 +38,30 @@ public class UserSignUp extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-                throws ServletException, IOException, ClassNotFoundException, NoSuchAlgorithmException {
-        try{
-        con=DbUtils.getConnection();
-        response.setContentType("text/html;charset=UTF-8");
-        //MessageDigest md=MessageDigest.getInstance("SHA-256");
-        //md.update(request.getParameter("password").getBytes("UTF-8"));
-        PreparedStatement ins=con.prepareStatement("insert into user (name,email,password,phone) values(?,?,?,?);");
-        ins.setString(1,request.getParameter("username"));
-        ins.setString(2,request.getParameter("email"));
-        ins.setString(3,request.getParameter("password"));
-        ins.setString(4,request.getParameter("phone"));
-        ins.execute();
-       // PrintWriter out = response.getWriter();
-        request.setAttribute("usersignup", "success");
-        RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
-        rd.forward(request, response);
-        //response.sendRedirect("login.jsp");
-        }catch(SQLException ex){
-           System.out.println(ex.toString());
-        }
+            throws ServletException, IOException, SQLException, ClassNotFoundException {
         
+        
+        Connection con =DbUtils.getConnection();
+        PreparedStatement stmt=con.prepareStatement("select * from user where email=? and password=?");
+        stmt.setString(1, request.getParameter("username"));
+        stmt.setString(2,request.getParameter("password"));
+        ResultSet set=stmt.executeQuery();
+        if(set.next()){
+            String id=set.getString("id");
+            HttpSession session=request.getSession(true);
+            session.setAttribute("userid", id);
+            session.setAttribute("username", set.getString("name"));
+            request.setAttribute("login","success");
+            request.setAttribute("curuser", User.getUser(id));
+            //response.sendRedirect("homepage.jsp");
+          //  RequestDispatcher rd=request.getRequestDispatcher("homepage.jsp");
+            getServletConfig().getServletContext().getRequestDispatcher("/homepage.jsp").forward(request, response);
+            //rd.forward(request, response);
+        }else{
+            request.setAttribute("login","fail");
+            RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+            rd.forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -79,10 +78,10 @@ public class UserSignUp extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(UserSignUp.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(UserSignUp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -99,10 +98,10 @@ public class UserSignUp extends HttpServlet {
             throws ServletException, IOException {
         try {
             processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(UserSignUp.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(UserSignUp.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

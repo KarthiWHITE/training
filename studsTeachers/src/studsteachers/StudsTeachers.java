@@ -81,16 +81,11 @@ public class StudsTeachers {
         
             classes.add((String)it.next());
         }
-        
-        
         String name=(String)tchr.get("Name");
         String ID=(String)tchr.get("ID");
         long salary=(long)tchr.get("Salary");
         String DOJ=(String)tchr.get("Date Of Joining");
-        
-        
         return new Teacher(ID,name,DOJ,salary,classes);
-        
     }
     
 }

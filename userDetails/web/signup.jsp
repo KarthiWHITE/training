@@ -10,35 +10,31 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sign Up</title>
-        <style type="text/css">
-            .singnupForm{
-                width: 239px;
-                margin: auto;
-            }
-            .singnupForm span{
-                font-size: 37px;
-                color: #0F85E8;
-            }
-            .singnupForm label{
-                margin-left: 10px;
-            }
-            .cb-input{
-                margin-left: 30px;
-            }
-            .input-grp{
-                margin-bottom: 2px;
-                background-color: #163E64;
-                width: 219px;
-                padding: 10px;
-                color: #fff;
-                font-weight: bold;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="style/design.css"/>
+            
         <script type="text/javascript" src="js/jquery17.js"></script>
         <script type="text/javascript">
             $(document).ready(function() {
                 $('#submitBtn').click(function() {
                     return frmValidation();
+                });
+                
+                $('#user-email').blur(function(){
+                            $.ajax({
+                                url: 'chkuser',
+                                type: 'POST',
+                                data: {email:$(this).val()},
+                                success: function(data){
+                                    if(data.toString()==="1"){
+                                        alert("Email is already used");
+                                        $(this).val("");
+                                    }
+                                    
+                                },
+                                error: function(e){
+                                    alert("Error while accessing server");
+                                }
+                            });
                 });
             });
             function frmValidation(){
@@ -51,7 +47,9 @@
                     return false;
                 }
                 return true;
+                
             }
+            
         </script>
     </head>
     <body>
@@ -64,7 +62,7 @@
                 </div>
                 <div class="input-grp">
                     <label>Email</label><br/>
-                    <input type="email" name="email" class="cb-input email"/><br/>
+                    <input id="user-email" type="email" name="email" class="cb-input email"/><br/>
                 </div>
                 <div class="input-grp">
                     <label>Conform Email</label><br/>
@@ -87,5 +85,6 @@
                 </div>
             </form>
         </div>
+        <div style="position: absolute;    right: 20px;    top: 20px;"><a href="login.jsp">User Login</a></div>
     </body>
 </html>

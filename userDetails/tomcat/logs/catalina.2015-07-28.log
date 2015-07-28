@@ -1,4 +1,3 @@
-Listening for transport dt_socket at address: 9000
 28-Jul-2015 17:13:43.768 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at /home/cb-admin1/myrepo/training/userDetails/tomcat/temp
 28-Jul-2015 17:13:44.281 WARNING [main] org.apache.catalina.core.StandardContext.setPath A context path must either be an empty string or start with a '/' and do not end with a '/'. The path [/] does not meet these criteria and has been changed to []
 28-Jul-2015 17:13:44.283 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'debug' to '0' did not find a matching property.
@@ -47,7 +46,6 @@ Listening for transport dt_socket at address: 9000
 28-Jul-2015 17:13:45.823 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
 28-Jul-2015 17:13:45.880 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9090"]
 28-Jul-2015 17:13:45.897 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1349 ms
-Listening for transport dt_socket at address: 9000
 28-Jul-2015 18:08:24.473 SEVERE [http-nio-9090-exec-2] null.null null
  java.sql.SQLException: Parameter index out of range (2 > number of parameters, which is 1).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
@@ -168,4 +166,3 @@ Listening for transport dt_socket at address: 9000
 
 28-Jul-2015 18:17:03.493 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
 28-Jul-2015 18:17:04.121 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
-Listening for transport dt_socket at address: 9000

@@ -1,0 +1,93 @@
+.singnupForm{
+    width: 239px;
+    margin: auto;
+}
+.singnupForm span{
+    font-size: 37px;
+    color: #0F85E8;
+}
+.singnupForm label{
+    margin-left: 10px;
+}
+.cb-input{
+    margin-left: 30px;
+}
+.input-grp{
+    margin-bottom: 2px;
+    background-color: #163E64;
+    width: 219px;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+}
+.heading{
+    text-align: center;
+    text-align: center;
+    font-size: 34px;
+    color: #1B366F;
+    text-shadow: 2px 2px 2px;
+}
+
+.pageheading{
+    padding: 5px;
+    background-color: #444;
+    color: #fff;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 37px;
+    text-shadow: 1px 0px;
+}
+
+.cont-wrapper{
+    width: 920px;
+    margin: 0px auto;
+    min-height: 500px;
+}
+.cont-menu{
+    float: left;
+    padding: 10px;
+}
+.cont-menu ul{
+    list-style: none;
+}
+.cont-menu ul li{
+    background-color: #444;
+    padding: 3px;
+    margin-bottom: 4px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #444;
+}
+.cont-menu ul li:active{
+    box-shadow: 1px 1px 1px #444;
+}
+
+.cont{
+    padding: 21px;
+    margin-left: 185px;
+}
+.change-address{
+    
+}
+
+.change-password{
+    display: none;
+}
+
+
+.btn{
+    float: left;
+    background-color: #297084;
+    padding: 5px 30px 5px 34px;
+    margin-right: 12px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 9px;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #444;
+}
+.btn:active{
+    box-shadow: 1px 1px 1px #444;
+}

@@ -1,4 +1,4 @@
-Customer Id,Subscription Id,Invoice Number,Invoice Date,Start Date,Amount,Status,Paid On,Next Retry,Refunded Amount,Recurring,First Invoice,Customer First Name,Customer Last Name,Customer Email,Customer Company,Tax Total
+Customer Id,subscription[plan_id],Invoice Number,Invoice Date,Start Date,Amount,subscription[status],Paid On,Next Retry,Refunded Amount,Recurring,First Invoice,Customer First Name,Customer Last Name,Customer Email,Customer Company,Tax Total
 2uENY2ytPEiGCuKJkO,2uENY2ytPEiGCuKJkO,7062,2015-06-05T06:29:00.000Z,2015-06-05T06:29:00.000Z,900,Payment Due,,,0,TRUE,TRUE,,,,,0
 1mqYqruPCRsr6EEhR,,7060,2015-05-26T09:54:00.000Z,2015-05-26T09:54:00.000Z,1200,Payment Due,,,0,FALSE,FALSE,,,,,0
 1mqYqp8P7vGR0b8Ww,1mqYqp8P7vGR0b8Ww,draft_inv_2uENY31gPDfwZyZGw,2015-05-25T06:30:00.000Z,2015-04-25T06:30:00.000Z,2000,Pending,,,0,TRUE,FALSE,John,Wayne,john@user.com,,0

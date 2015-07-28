@@ -5,8 +5,49 @@
 	<servlet-class>UserSignUp</servlet-class>
 		
 </servlet>
+<servlet>
+	<servlet-name>chkemail</servlet-name>
+	<servlet-class>CheckEmail</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>userlogin</servlet-name>
+	<servlet-class>Login</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>usrlogout</servlet-name>
+	<servlet-class>UserLogout</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>updateaddress</servlet-name>
+	<servlet-class>UpdateAddress</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>updatepassword</servlet-name>
+	<servlet-class>UpdatePassword</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>updatepassword</servlet-name>
+	<url-pattern>/updatepassword</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>updateaddress</servlet-name>
+	<url-pattern>/updateaddress</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>usrlogout</servlet-name>
+	<url-pattern>/logout</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>userlogin</servlet-name>
+	<url-pattern>/usrlogin</url-pattern>
+
+</servlet-mapping>
 <servlet-mapping>
 	<servlet-name>userSignUp</servlet-name>
 	<url-pattern>/signup</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+        <servlet-name>chkemail</servlet-name>
+        <url-pattern>/chkuser</url-pattern>
 </servlet-mapping>
 </web-app>
