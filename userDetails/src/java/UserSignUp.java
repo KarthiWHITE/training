@@ -56,9 +56,9 @@ public class UserSignUp extends HttpServlet {
         ins.execute();
        // PrintWriter out = response.getWriter();
         request.setAttribute("usersignup", "success");
-        RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
+        RequestDispatcher rd=request.getRequestDispatcher("login");
         rd.forward(request, response);
-        //response.sendRedirect("login.jsp");
+        //response.sendRedirect("login");
         }catch(SQLException ex){
            System.out.println(ex.toString());
         }

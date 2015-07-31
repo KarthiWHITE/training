@@ -28,7 +28,7 @@ public class UpdatePassword extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
         if(request.getSession().getAttribute("userid")==null){
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
         }
         
         try {
@@ -48,7 +48,13 @@ public class UpdatePassword extends HttpServlet{
                 stmt.setString(2, request.getSession().getAttribute("userid").toString());
                 stmt.execute();
                 request.setAttribute("curuser", User.getUser(request.getSession().getAttribute("userid").toString()));
-                getServletConfig().getServletContext().getRequestDispatcher("/homepage.jsp").forward(request, response);
+               // getServletConfig().getServletContext().getRequestDispatcher("userabout").forward(request, response);
+                response.sendRedirect("userabout");
+            }else{
+                request.setAttribute("chngepassword", "fail");
+                //getServletConfig().getServletContext().getRequestDispatcher("userabout").forward(request, response);
+                response.sendRedirect("userabout");
+
             }
             
         } catch (SQLException ex) {

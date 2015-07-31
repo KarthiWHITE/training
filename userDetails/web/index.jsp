@@ -31,8 +31,8 @@
     </head>
     <body>
         <div style="  position: absolute;  right: 50px;  top: 50px;">
-            <a class="button" href="signup.jsp">Sign Up</a>
-            <a class="button" href="login.jsp">User Login</a>
+            <a class="button" href="usrsignup">Sign Up</a>
+            <a class="button" href="login">User Login</a>
         </div>
     </body>
 </html>

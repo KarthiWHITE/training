@@ -25,6 +25,54 @@
 	<servlet-name>updatepassword</servlet-name>
 	<servlet-class>UpdatePassword</servlet-class>
 </servlet>
+<servlet>
+        <servlet-name>addnewcontact</servlet-name>
+        <servlet-class>AddContact</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>searchcontact</servlet-name>
+	<jsp-file>/searchcontacts.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>signuppage</servlet-name>
+	<jsp-file>/signup.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>loginpage</servlet-name>
+	<jsp-file>/login.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>userabout</servlet-name>
+	<jsp-file>/homepage.jsp</jsp-file>
+</servlet>
+<servlet>
+	<servlet-name>indexpage</servlet-name>
+	<jsp-file>/index.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+        <servlet-name>searchcontact</servlet-name>
+	<url-pattern>/search</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>addnewcontact</servlet-name>
+	<url-pattern>/addcontact</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>indexpage</servlet-name>
+	<url-pattern>/index</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>userabout</servlet-name>
+	<url-pattern>/userabout</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>loginpage</servlet-name>
+	<url-pattern>/login</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>signuppage</servlet-name>
+	<url-pattern>/usrsignup</url-pattern>
+</servlet-mapping>
 <servlet-mapping>
 	<servlet-name>updatepassword</servlet-name>
 	<url-pattern>/updatepassword</url-pattern>

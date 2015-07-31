@@ -28,7 +28,7 @@ public class UpdateAddress extends HttpServlet{
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
    
         if(request.getSession().getAttribute("userid")==null){
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("login");
         }
         
         if(request.getParameter("fname")!=null){
@@ -69,7 +69,8 @@ public class UpdateAddress extends HttpServlet{
                 
                 con.close();
                 request.setAttribute("curuser", User.getUser( request.getSession().getAttribute("userid").toString()));
-                getServletConfig().getServletContext().getRequestDispatcher("/homepage.jsp").forward(request, response);
+               // getServletConfig().getServletContext().getRequestDispatcher("userabout").forward(request, response);
+                response.sendRedirect("userabout");
                 
             } catch (SQLException ex) {
                 Logger.getLogger(UpdateAddress.class.getName()).log(Level.SEVERE, null, ex);

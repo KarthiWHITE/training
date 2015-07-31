@@ -1,172 +1,65 @@
 Listening for transport dt_socket at address: 9000
-28-Jul-2015 17:13:43.768 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at /home/cb-admin1/myrepo/training/userDetails/tomcat/temp
-28-Jul-2015 17:13:44.281 WARNING [main] org.apache.catalina.core.StandardContext.setPath A context path must either be an empty string or start with a '/' and do not end with a '/'. The path [/] does not meet these criteria and has been changed to []
-28-Jul-2015 17:13:44.283 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'debug' to '0' did not find a matching property.
-28-Jul-2015 17:13:44.284 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'disableURLRewriting' to 'true' did not find a matching property.
-28-Jul-2015 17:13:44.326 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Valve} Setting property 'resolveHosts' to 'false' did not find a matching property.
-28-Jul-2015 17:13:44.329 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.21
-28-Jul-2015 17:13:44.329 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 23 2015 14:11:21 UTC
-28-Jul-2015 17:13:44.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.21.0
-28-Jul-2015 17:13:44.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
-28-Jul-2015 17:13:44.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.13.0-58-generic
-28-Jul-2015 17:13:44.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
-28-Jul-2015 17:13:44.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk1.8.0_05/jre
-28-Jul-2015 17:13:44.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_05-b13
-28-Jul-2015 17:13:44.330 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
-28-Jul-2015 17:13:44.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cb-admin1/myrepo/training/userDetails/tomcat
-28-Jul-2015 17:13:44.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cb-admin1/myrepo/training/userDetails/tomcat
-28-Jul-2015 17:13:44.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cb-admin1/myrepo/training/userDetails/tomcat/conf/logging.properties
-28-Jul-2015 17:13:44.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
-28-Jul-2015 17:13:44.331 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -verbose:gc
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xloggc:../logs/gc.log
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.SESSION_COOKIE_NAME=SESSION
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.SESSION_PARAMETER_NAME=SESSION
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfswatch.sleep_time=50
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx1024M
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms1024M
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseG1GC
-28-Jul-2015 17:13:44.332 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxGCPauseMillis=500
-28-Jul-2015 17:13:44.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dtomcat.ctx.reloadable=true
-28-Jul-2015 17:13:44.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dtomcat.access.logs.dir=logs
-28-Jul-2015 17:13:44.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcb.base.dir=../..
-28-Jul-2015 17:13:44.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.startup.EXIT_ON_INIT_FAILURE=true
-28-Jul-2015 17:13:44.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Denv.class=com.chargebee.controlserver.ControlServerEnv
-28-Jul-2015 17:13:44.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcb.env.conf=../../conf/environment.conf
-28-Jul-2015 17:13:44.333 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Daws.setup.env.conf.dir=../../conf
-28-Jul-2015 17:13:44.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=localhost:9000,server=y,suspend=n
-28-Jul-2015 17:13:44.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=/home/cb-admin1/myrepo/training/userDetails/tomcat/endorsed
-28-Jul-2015 17:13:44.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cb-admin1/myrepo/training/userDetails/tomcat
-28-Jul-2015 17:13:44.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cb-admin1/myrepo/training/userDetails/tomcat
-28-Jul-2015 17:13:44.334 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cb-admin1/myrepo/training/userDetails/tomcat/temp
-28-Jul-2015 17:13:44.334 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
-28-Jul-2015 17:13:44.526 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9090"]
-28-Jul-2015 17:13:44.543 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
-28-Jul-2015 17:13:44.546 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 779 ms
-28-Jul-2015 17:13:44.575 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
-28-Jul-2015 17:13:44.576 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.21
-28-Jul-2015 17:13:45.823 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
-28-Jul-2015 17:13:45.880 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9090"]
-28-Jul-2015 17:13:45.897 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1349 ms
-Listening for transport dt_socket at address: 9000
-28-Jul-2015 18:08:24.473 SEVERE [http-nio-9090-exec-2] null.null null
- java.sql.SQLException: Parameter index out of range (2 > number of parameters, which is 1).
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920)
-	at com.mysql.jdbc.PreparedStatement.checkBounds(PreparedStatement.java:3796)
-	at com.mysql.jdbc.PreparedStatement.setInternal(PreparedStatement.java:3778)
-	at com.mysql.jdbc.PreparedStatement.setString(PreparedStatement.java:4599)
-	at UpdatePassword.doPost(UpdatePassword.java:48)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
-	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:223)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1517)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1474)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:745)
-
-28-Jul-2015 18:09:41.937 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
-28-Jul-2015 18:09:41.949 WARNING [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+31-Jul-2015 11:34:35.283 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at /home/cb-admin1/myrepo/training/userDetails/tomcat/temp
+31-Jul-2015 11:34:35.756 WARNING [main] org.apache.catalina.core.StandardContext.setPath A context path must either be an empty string or start with a '/' and do not end with a '/'. The path [/] does not meet these criteria and has been changed to []
+31-Jul-2015 11:34:35.758 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'debug' to '0' did not find a matching property.
+31-Jul-2015 11:34:35.758 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'disableURLRewriting' to 'true' did not find a matching property.
+31-Jul-2015 11:34:35.799 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Valve} Setting property 'resolveHosts' to 'false' did not find a matching property.
+31-Jul-2015 11:34:35.801 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.0.21
+31-Jul-2015 11:34:35.801 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Mar 23 2015 14:11:21 UTC
+31-Jul-2015 11:34:35.801 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.0.21.0
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            3.13.0-59-generic
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/jdk1.8.0_05/jre
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_05-b13
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/cb-admin1/myrepo/training/userDetails/tomcat
+31-Jul-2015 11:34:35.802 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/cb-admin1/myrepo/training/userDetails/tomcat
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/cb-admin1/myrepo/training/userDetails/tomcat/conf/logging.properties
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -verbose:gc
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xloggc:../logs/gc.log
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.SESSION_COOKIE_NAME=SESSION
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.SESSION_PARAMETER_NAME=SESSION
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfswatch.sleep_time=50
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xmx1024M
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Xms1024M
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:+UseG1GC
+31-Jul-2015 11:34:35.803 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -XX:MaxGCPauseMillis=500
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dtomcat.ctx.reloadable=true
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dtomcat.access.logs.dir=logs
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcb.base.dir=../..
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.startup.EXIT_ON_INIT_FAILURE=true
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Denv.class=com.chargebee.controlserver.ControlServerEnv
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcb.env.conf=../../conf/environment.conf
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Daws.setup.env.conf.dir=../../conf
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -agentlib:jdwp=transport=dt_socket,address=localhost:9000,server=y,suspend=n
+31-Jul-2015 11:34:35.804 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.endorsed.dirs=/home/cb-admin1/myrepo/training/userDetails/tomcat/endorsed
+31-Jul-2015 11:34:35.805 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/cb-admin1/myrepo/training/userDetails/tomcat
+31-Jul-2015 11:34:35.805 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/cb-admin1/myrepo/training/userDetails/tomcat
+31-Jul-2015 11:34:35.805 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/cb-admin1/myrepo/training/userDetails/tomcat/temp
+31-Jul-2015 11:34:35.805 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+31-Jul-2015 11:34:35.992 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-9090"]
+31-Jul-2015 11:34:36.007 INFO [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+31-Jul-2015 11:34:36.010 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 728 ms
+31-Jul-2015 11:34:36.047 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service Catalina
+31-Jul-2015 11:34:36.047 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.0.21
+31-Jul-2015 11:34:37.343 INFO [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+31-Jul-2015 11:34:37.437 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-9090"]
+31-Jul-2015 11:34:37.449 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 1438 ms
+31-Jul-2015 12:39:47.926 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+31-Jul-2015 12:39:47.935 WARNING [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [ROOT] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
  java.lang.Object.wait(Native Method)
  java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:142)
  com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:40)
-28-Jul-2015 18:09:42.572 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
-28-Jul-2015 18:10:16.604 SEVERE [http-nio-9090-exec-7] null.null null
- com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set password='karthikeyan' where id='1'' at line 1
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
-	at com.mysql.jdbc.Util.getInstance(Util.java:386)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1054)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2825)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1379)
-	at UpdatePassword.doPost(UpdatePassword.java:49)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
-	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:223)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1517)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1474)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:745)
-
-28-Jul-2015 18:11:02.581 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
-28-Jul-2015 18:11:03.453 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
-28-Jul-2015 18:11:24.016 SEVERE [http-nio-9090-exec-5] null.null null
- com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table user set password='karthikeyan' where id='1'' at line 1
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
-	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
-	at com.mysql.jdbc.Util.getInstance(Util.java:386)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1054)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4237)
-	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:4169)
-	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2617)
-	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2778)
-	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2825)
-	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:2156)
-	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1379)
-	at UpdatePassword.doPost(UpdatePassword.java:49)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:502)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
-	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:610)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:518)
-	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1091)
-	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:668)
-	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:223)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1517)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1474)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:745)
-
-28-Jul-2015 18:17:03.493 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
-28-Jul-2015 18:17:04.121 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+31-Jul-2015 12:39:48.574 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+31-Jul-2015 12:59:18.693 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+31-Jul-2015 12:59:19.433 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
+31-Jul-2015 13:01:09.452 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+31-Jul-2015 13:01:10.097 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
 Listening for transport dt_socket at address: 9000
-Listening for transport dt_socket at address: 9000
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '' for key 'email'
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Duplicate entry '' for key 'email'
+com.mysql.jdbc.JDBC4PreparedStatement@4900db: insert into address (userid,line1,line2,city,state,country,zip,fname,lname) values('14','','','','','','','chitra','Lakshmanan')
+31-Jul-2015 15:29:06.975 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
+31-Jul-2015 15:29:07.680 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed

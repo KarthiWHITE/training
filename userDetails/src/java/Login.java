@@ -39,31 +39,48 @@ public class Login extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException, ClassNotFoundException {
-        
-        
-        Connection con =DbUtils.getConnection();
-        PreparedStatement stmt=con.prepareStatement("select * from user where email=? and password=?");
-        stmt.setString(1, request.getParameter("username"));
-        stmt.setString(2,request.getParameter("password"));
-        ResultSet set=stmt.executeQuery();
-        if(set.next()){
-            String id=set.getString("id");
-            HttpSession session=request.getSession(true);
-            session.setAttribute("userid", id);
-            session.setAttribute("username", set.getString("name"));
-            request.setAttribute("login","success");
-            request.setAttribute("curuser", User.getUser(id));
-            //response.sendRedirect("homepage.jsp");
-          //  RequestDispatcher rd=request.getRequestDispatcher("homepage.jsp");
-            getServletConfig().getServletContext().getRequestDispatcher("/homepage.jsp").forward(request, response);
-            //rd.forward(request, response);
-        }else{
-            request.setAttribute("login","fail");
-            RequestDispatcher rd=request.getRequestDispatcher("login.jsp");
-            rd.forward(request, response);
+
+        if (request.getSession().getAttribute("userid") != null) {
+            request.setAttribute("curuser", User.getUser(request.getSession().getAttribute("userid").toString()));
+           // request.getRequestDispatcher("userabout").forward(request, response);
+            response.sendRedirect("userabout");
+            //return;
+        } else {
+            if (request.getParameter("username") != null) {
+                Connection con = DbUtils.getConnection();
+                PreparedStatement stmt = con.prepareStatement("select * from user where email=? and password=?");
+                stmt.setString(1, request.getParameter("username"));
+                stmt.setString(2, request.getParameter("password"));
+                ResultSet set = stmt.executeQuery();
+                if (set.next()) {
+                    String id = set.getString("id");
+                    HttpSession session = request.getSession(true);
+                    session.setAttribute("userid", id);
+                    session.setAttribute("username", set.getString("name"));
+                    request.setAttribute("login", "success");
+                    request.setAttribute("curuser", User.getUser(id));
+            //response.sendRedirect("userabout");
+                   // RequestDispatcher rd=request.getRequestDispatcher("userabout");
+                    //getServletConfig().getServletContext().getRequestDispatcher("userabout").forward(request, response);
+                  //  rd.forward(request, response);
+                    response.sendRedirect("userabout");
+              
+                }else{
+                    loginFailedRedirect(request, response);
+                }
+            } else {
+                    loginFailedRedirect(request, response);
+                //response.sendRedirect("login");
+
+            }
         }
     }
 
+    private void loginFailedRedirect(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+            request.setAttribute("login", "fail");
+                RequestDispatcher rd = request.getRequestDispatcher("login");
+                rd.forward(request, response);
+    }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

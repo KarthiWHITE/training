@@ -23,7 +23,7 @@ public class UserLogout extends HttpServlet{
       if (session != null) {
           session.invalidate();
         }  
-      response.sendRedirect("usrlogin");
+      response.sendRedirect("login");
     }
     
     @Override

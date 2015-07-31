@@ -19,6 +19,7 @@
     padding: 10px;
     color: #fff;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .heading{
     text-align: center;
@@ -58,6 +59,12 @@
     font-weight: bold;
     cursor: pointer;
     box-shadow: 2px 2px 2px #444;
+    border-radius: 11px;
+    text-align: center;
+}
+.cont-menu ul li:hover{
+    background-color: #fff;
+    color: #444;
 }
 .cont-menu ul li:active{
     box-shadow: 1px 1px 1px #444;
@@ -68,13 +75,18 @@
     margin-left: 185px;
 }
 .change-address{
-    
+    display: none;
 }
 
 .change-password{
     display: none;
 }
-
+.user-details{
+    display: none;
+}
+.contacts{
+    // display: none;
+}
 
 .btn{
     float: left;
@@ -91,3 +103,139 @@
 .btn:active{
     box-shadow: 1px 1px 1px #444;
 }
+.error{
+    color: red;
+    text-align: center;
+}
+
+.user{
+    padding: 10px;
+    background-color: #ADCAE6;
+    border-radius: 14px;
+    box-shadow: 2px 2px 7px;
+}
+.user ul{
+    list-style: none;
+}
+.user ul li{
+    margin-bottom: 10px;    
+}
+
+.user ul li span{
+    font-weight: bold;
+    color: #4400FB;
+    text-shadow: 2px 2px 2px #fff;
+}
+.logout{
+    text-decoration: none;
+    color: #5D5D5D;
+    margin-left: 20px;
+    background-color: #FFF;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.logout:hover{
+    background-color: #5D5D5D;
+    color: #FFF;
+}
+
+
+.singnupForm .email-status{
+
+}
+.status-invalid{
+    font-size: 18px;
+    color: #D6322E;
+    background-image: url("../imgs/invalid.png");
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    margin-top: 3px;
+    height: 21px;
+
+}
+.status-valid{
+    font-size: 18px;
+    color: #82CA50;
+    background-image: url("../imgs/valid.png");
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    margin-top: 3px;
+    height: 21px;
+
+}
+
+.contacts .contact {
+    // padding-bottom: 40px;
+    border: 2px #444 solid;
+    margin-bottom: 4px;
+    border-radius: 8px;
+
+}
+.contacts .contact .contact-heading{
+    background-color: #2C5F61;
+    padding: 4px;
+    color: #fff;
+    font-weight: bold;
+    padding-left: 15px;
+    box-shadow: 2px 2px 2px #7DCCBD;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.contacts .contact .contact-heading:hover{
+    background-color: #fff;
+    color: #2C5F61;
+}
+
+.contacts .contact .contact-details{
+    padding: 10px;
+    //margin-bottom: 41px;
+    display: none;
+}
+
+.btn-add{
+
+    background-color: #297084;
+    padding: 5px 15px 5px 15px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 9px;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #444;
+    width: 96px;
+}
+.btn:active{
+    box-shadow: 1px 1px 1px #444;
+}
+
+.search-result table{
+    border: 2px #444 solid;
+    border-collapse: collapse;
+}
+
+.search-result table tr td,.search-result table tr th{
+    border: 2px #444 solid;
+    padding: 4px 20px 4px 20px;
+}
+
+.search-result table tr:nth-child(odd){ 
+    background: #b8d1f3;
+}
+
+
+.search-result table tr:nth-child(even){ 
+    background: #F3F3F3;
+}
+.search-result table tr:hover{
+    background: #00776E;
+    color: #fff;
+    cursor: pointer;
+}
+.add-contact{
+    display: none;
+}
+
+
