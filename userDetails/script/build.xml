@@ -21,6 +21,7 @@
 			<pathelement path="${jar.path}/servlet-api.jar"/>
 			<pathelement path="${jar.path}/../other-libs/json_org.jar"/>	
 		</classpath>
+		<compilerarg value="-g"/>
 	</javac>
 	<!--javac srcdir="${src.dir}" destdir="${class.dir}"/-->
 </target>

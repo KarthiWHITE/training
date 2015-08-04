@@ -1,12 +1,5 @@
 Java HotSpot(TM) 64-Bit Server VM (25.5-b02) for linux-amd64 JRE (1.8.0_05-b13), built on Mar 18 2014 00:29:27 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
-Memory: 4k page, physical 8052092k(3013876k free), swap 8261628k(8261628k free)
+Memory: 4k page, physical 8052092k(1563156k free), swap 8261628k(8261584k free)
 CommandLine flags: -XX:InitialHeapSize=1073741824 -XX:MaxGCPauseMillis=500 -XX:MaxHeapSize=1073741824 -XX:+PrintGC -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseG1GC 
-1.316: [GC pause (G1 Evacuation Pause) (young) 52M->10M(1024M), 0.0212822 secs]
-1.606: [GC pause (G1 Evacuation Pause) (young) 69M->20M(1024M), 0.0168908 secs]
-6.971: [Full GC (Metadata GC Threshold)  307M->52M(1024M), 0.1045112 secs]
-674.268: [GC pause (G1 Evacuation Pause) (young) 666M->151M(1024M), 0.0567843 secs]
-674.330: [GC pause (G1 Evacuation Pause) (young) 152M->151M(1024M), 0.0291240 secs]
-745.491: [GC pause (G1 Evacuation Pause) (young) 755M->237M(1024M), 0.0541799 secs]
-745.619: [GC pause (G1 Evacuation Pause) (young) 271M->168M(1024M), 0.0082695 secs]
-946.839: [GC pause (G1 Evacuation Pause) (young) 774M->253M(1024M), 0.0470909 secs]
-4358.072: [GC pause (G1 Evacuation Pause) (young) 790M->246M(1024M), 0.0478768 secs]
+1.333: [GC pause (G1 Evacuation Pause) (young) 52M->10M(1024M), 0.0146253 secs]
+1.614: [GC pause (G1 Evacuation Pause) (young) 69M->20M(1024M), 0.0215291 secs]

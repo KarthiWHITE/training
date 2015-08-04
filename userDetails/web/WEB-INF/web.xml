@@ -30,6 +30,14 @@
         <servlet-class>AddContact</servlet-class>
 </servlet>
 <servlet>
+	<servlet-name>userabout</servlet-name>
+	<servlet-class>Details</servlet-class>
+</servlet>
+<servlet>
+	<servlet-name>useraboutpage</servlet-name>
+	<jsp-file>/homepage.jsp</jsp-file>
+</servlet>
+<servlet>
 	<servlet-name>searchcontact</servlet-name>
 	<jsp-file>/searchcontacts.jsp</jsp-file>
 </servlet>
@@ -41,10 +49,7 @@
 	<servlet-name>loginpage</servlet-name>
 	<jsp-file>/login.jsp</jsp-file>
 </servlet>
-<servlet>
-	<servlet-name>userabout</servlet-name>
-	<jsp-file>/homepage.jsp</jsp-file>
-</servlet>
+
 <servlet>
 	<servlet-name>indexpage</servlet-name>
 	<jsp-file>/index.jsp</jsp-file>
@@ -60,6 +65,10 @@
 <servlet-mapping>
 	<servlet-name>indexpage</servlet-name>
 	<url-pattern>/index</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+	<servlet-name>useraboutpage</servlet-name>
+	<url-pattern>/useraboutcont</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
 	<servlet-name>userabout</servlet-name>
