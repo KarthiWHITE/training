@@ -82,12 +82,14 @@
     display: none;
 }
 .user-details{
-    display: none;
+    //display: none;
 }
 .contacts{
-    // display: none;
+     display: none;
 }
-
+.search-result{
+    margin-top: 20px;
+}
 .btn{
     float: left;
     background-color: #297084;
@@ -238,4 +240,16 @@
     display: none;
 }
 
-
+.status{
+    position: fixed;
+    top: 10px;
+    color: red;
+    /* margin: 0px auto; */
+    left: 0px;
+    right: 0px;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    text-shadow: 1px 1px 3px #FFF;
+    font-weight: bold;
+}

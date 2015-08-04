@@ -1,16 +1,11 @@
 
-import java.io.IOException;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import utils.DbUtils;
 import utils.Utils;
 
@@ -28,10 +23,7 @@ public class AddContact extends HttpServlet {
                 stmt.setString(3, request.getParameter("contactemail"));
                 Long contactid = DbUtils.insertAndGetId(stmt);
 
-                
-
                 for (Utils.MobileTypes type:Utils.MobileTypes.values()) {
-                    
                     String mnumber = request.getParameter(type.name());
                     if (!mnumber.isEmpty()) {
                         String sql = "insert into numbers(contactid,number,type)values(?,?,?)";
@@ -43,20 +35,11 @@ public class AddContact extends HttpServlet {
                     }
                 }
                 response.sendRedirect("/userabout");
-            } catch (SQLException ex) {
-                Logger.getLogger(AddContact.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(AddContact.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception ex) {
                 Logger.getLogger(AddContact.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            } 
 
         }
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if (request.getSession().getAttribute("userid") == null) {
-            response.sendRedirect("login");
-        }
-    }
 }

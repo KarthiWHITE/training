@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-import utils.User;
+import userclasses.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -42,14 +42,12 @@ public class Login extends HttpServlet {
 
         if (request.getSession().getAttribute("userid") != null) {
             request.setAttribute("curuser", User.getUser(request.getSession().getAttribute("userid").toString()));
-           // request.getRequestDispatcher("userabout").forward(request, response);
             response.sendRedirect("userabout");
-            //return;
         } else {
-            if (request.getParameter("username") != null) {
+            if (request.getParameter("email") != null) {
                 Connection con = DbUtils.getConnection();
                 PreparedStatement stmt = con.prepareStatement("select * from user where email=? and password=?");
-                stmt.setString(1, request.getParameter("username"));
+                stmt.setString(1, request.getParameter("email"));
                 stmt.setString(2, request.getParameter("password"));
                 ResultSet set = stmt.executeQuery();
                 if (set.next()) {
@@ -59,10 +57,6 @@ public class Login extends HttpServlet {
                     session.setAttribute("username", set.getString("name"));
                     request.setAttribute("login", "success");
                     request.setAttribute("curuser", User.getUser(id));
-            //response.sendRedirect("userabout");
-                   // RequestDispatcher rd=request.getRequestDispatcher("userabout");
-                    //getServletConfig().getServletContext().getRequestDispatcher("userabout").forward(request, response);
-                  //  rd.forward(request, response);
                     response.sendRedirect("userabout");
               
                 }else{
@@ -70,8 +64,6 @@ public class Login extends HttpServlet {
                 }
             } else {
                     loginFailedRedirect(request, response);
-                //response.sendRedirect("login");
-
             }
         }
     }

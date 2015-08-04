@@ -1,0 +1,28 @@
+<project name='userdetails' basedir='../' default='main'>
+
+<property name="src.dir" value="src"/>
+<property name="class.dir" value="web/WEB-INF/classes"/>
+
+<property name="jar.path" value="tomcat/lib"/>
+
+<target name="test" >
+	<echo message="${jar.path}/serrvlet-api.jar"/>
+</target>
+<target name='main' depends='clean,compile'/>
+
+<target name="clean">
+	<delete dir='${class.dir}'/>
+</target>
+
+<target name="compile">
+	<mkdir dir="${class.dir}"/>
+	<javac srcdir="${src.dir}" destdir="${class.dir}">
+		<classpath>
+			<pathelement path="${jar.path}/servlet-api.jar"/>
+			<pathelement path="${jar.path}/../other-libs/json_org.jar"/>	
+		</classpath>
+	</javac>
+	<!--javac srcdir="${src.dir}" destdir="${class.dir}"/-->
+</target>
+	
+</project>

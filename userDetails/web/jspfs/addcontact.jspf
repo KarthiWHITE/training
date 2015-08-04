@@ -1,0 +1,22 @@
+<div class="add-contact sub-cont">
+    <form method="post" action="addcontact">
+        <div class="input-grp">
+            <label>Name :</label> <input type="text" name="contactname"/>
+        </div>
+        <div class="input-grp">
+            <label>Email :</label><input type="email" name="contactemail"/>
+        </div>
+
+        <%
+            for (Utils.MobileTypes type : Utils.MobileTypes.values()) {
+        %>
+        <div class="input-grp">
+            <label><%=type.name().toLowerCase()%> : </label><input type="text" name="<%=type.name()%>"/>
+        </div> 
+        <%
+            }
+        %>
+        <input type="reset" value="Clear"/>
+        <input style="margin-left: 10px;" type="submit" value="Add"/>
+    </form>
+</div>

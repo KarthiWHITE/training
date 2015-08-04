@@ -1,0 +1,17 @@
+<div class="user-details sub-cont">
+    <div class="user">
+        <ul>
+            <li><span>First Name:</span> <%=user.getFName()%></li>
+            <li><span>Last Name :</span> <%=user.getLName()%></li>
+            <li><span>Email :</span><%=user.getEmail()%></li>
+            <li><span>Address Line1: </span><%=user.getLine1()%></li>
+            <li><span>Address Line2: </span><%=user.getLine2()%></li>
+            <li><span>City :</span><%=user.getCity()%></li>
+            <li><span>State :</span><%=user.getState()%></li>
+            <li><span>Country :</span><%=user.getCountry()%></li>
+            <li><span>Zip code :</span><%=user.getZip()%></li>
+
+        </ul>  
+    </div>
+
+</div>

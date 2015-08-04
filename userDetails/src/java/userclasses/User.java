@@ -1,4 +1,4 @@
-package utils;
+package userclasses;
 
 
 import java.sql.Connection;
@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import jdk.nashorn.internal.codegen.CompilerConstants;
+import utils.DbUtils;
 
 
 /*
@@ -121,7 +122,7 @@ public class User {
     }
     
     public static User getUser(String id) throws SQLException, ClassNotFoundException{
-        
+       
         User user=new User();
         
         Connection con=DbUtils.getConnection();

@@ -1,3 +1,6 @@
+<%@page import="java.util.List"%>
+<%@page import="userclasses.Contact"%>
+<%@page import="userclasses.Number"%>
 <%@page import="utils.SearchCont"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="utils.Utils"%>
@@ -8,27 +11,23 @@
     </tr>
     <%
 
-        ResultSet set = SearchCont.getSearchContacts(request.getParameter("searchword"), Integer.parseInt(request.getSession().getAttribute("userid").toString()));
+        List<Contact> contacts = SearchCont.getSearchContacts(request.getParameter("searchword"), Integer.parseInt(request.getSession().getAttribute("userid").toString()));
     %>
     <%
-        while (set.next()) {
+        for(Contact con:contacts) {
     %>
     <tr>
-        <td><%=set.getString("name")%></td>
-        <td><%=set.getString("email")%></td>
+        <td><%=con.getName() %></td>
+        <td><%=con.getEmail() %></td>
         <%
-            String num = set.getString("num");
-            String types = set.getString("types");
-            if (num != null) {
-                String[] numbers = num.split(", ");
-                String[] tp = types.split(", ");
-
+            if (!con.getNumberList().isEmpty()) {
+                
                 for (Utils.MobileTypes types1 : Utils.MobileTypes.values()) {
                     boolean b=false;
-                    for (int i = 0; i < numbers.length; i++) {
-                        if (Integer.parseInt(tp[i]) == types1.value()) {
+                    for (Number n:con.getNumberList()) {
+                        if (n.getType()== types1.value()) {
         %>
-        <td><%=numbers[i]%></td>
+        <td><%=n.getNumber() %></td>
         <% b=true;break;
                             }
                     }

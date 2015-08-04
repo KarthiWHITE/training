@@ -1,0 +1,9 @@
+<div class="contacts sub-cont">
+    <div contact-heading>
+        Search: <input type="text" class="searchbox"><input class="search-contact" type="button" value="Search"/>
+    </div>
+
+    <div class="search-result">
+
+    </div>
+</div>

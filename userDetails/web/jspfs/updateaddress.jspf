@@ -1,0 +1,40 @@
+<div class="change-address sub-cont">
+    <form class="addrss-update" method="post" action="updateaddress">
+        <input type="hidden" name="address" value="<%=user.addValid%>"/>
+        <div class="input-grp">
+            <label>First Name</label><input type="text" name="fname" value="<%=user.getFName()%>"/>
+        </div>
+        <div class="input-grp">
+            <label>Last Name</label><input type="text" name="lname" value="<%=user.getLName()%>"/>
+        </div>
+        <div class="input-grp">
+            <label>Email Id</label><input type="text" name="email" readonly value="<%=user.getEmail()%>"/>
+        </div> 
+        <div class="input-grp">
+            <label>Address Line 1</label>
+            <input type="text" name="addresslineone" value="<%=user.getLine1()%>"/>
+        </div>
+        <div class="input-grp">
+            <label>Address Line 2</label>
+            <input type="text" name="addresslinetwo" value="<%=user.getLine2()%>"/>
+        </div>
+        <div class="input-grp">
+            <label>City</label><br/>
+            <input type="text" name="city" value="<%=user.getCity()%>"/>
+        </div>
+        <div class="input-grp">
+            <label>State</label><br/>
+            <input type="text" name="state" value="<%=user.getState()%>"/>
+        </div>
+        <div class="input-grp">
+            <label>Country</label><br/>
+            <input type="text" name="country" value="<%=user.getCountry()%>"/>
+        </div>
+        <div class="input-grp">
+            <label>Zip code</label><br/>
+            <input type="text" name="zipcode" value="<%=user.getZip()%>"/>
+        </div>
+        <div class="btn btn-cancel">Cancel</div>
+        <div class="btn btn-update">Update</div>
+    </form>
+</div>

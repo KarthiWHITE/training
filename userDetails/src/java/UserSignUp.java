@@ -46,19 +46,15 @@ public class UserSignUp extends HttpServlet {
         try{
         con=DbUtils.getConnection();
         response.setContentType("text/html;charset=UTF-8");
-        //MessageDigest md=MessageDigest.getInstance("SHA-256");
-        //md.update(request.getParameter("password").getBytes("UTF-8"));
         PreparedStatement ins=con.prepareStatement("insert into user (name,email,password,phone) values(?,?,?,?);");
         ins.setString(1,request.getParameter("username"));
         ins.setString(2,request.getParameter("email"));
         ins.setString(3,request.getParameter("password"));
         ins.setString(4,request.getParameter("phone"));
         ins.execute();
-       // PrintWriter out = response.getWriter();
         request.setAttribute("usersignup", "success");
         RequestDispatcher rd=request.getRequestDispatcher("login");
         rd.forward(request, response);
-        //response.sendRedirect("login");
         }catch(SQLException ex){
            System.out.println(ex.toString());
         }

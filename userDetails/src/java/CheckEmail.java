@@ -28,15 +28,7 @@ public class CheckEmail extends HttpServlet{
       processRequest(request, response);
         
     }
-    
-    @Override
-    protected  void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException{
-          
-       processRequest(request, response);
-        
-    }
-    
-    
+
     private void processRequest(HttpServletRequest request,HttpServletResponse response) throws IOException{
     
         response.setContentType("text/plain");
@@ -53,10 +45,8 @@ public class CheckEmail extends HttpServlet{
             }else{
                 out.write("0");
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
            out.write(ex.toString());
-        } catch (ClassNotFoundException ex) {
-            out.write(ex.toString());
-        }
+        } 
     }
 }

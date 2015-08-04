@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import utils.DbUtils;
-import utils.User;
+import userclasses.User;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -32,36 +32,25 @@ public class UpdatePassword extends HttpServlet{
         }
         
         try {
-            
-            
             Connection con=DbUtils.getConnection();
-            PreparedStatement stmt=con.prepareStatement("select id from user where id=? and password=?");
+            PreparedStatement stmt=con.prepareStatement("update user set password=? where id=? and password=?");
+            stmt.setString(1, request.getParameter("newpassword"));
+            stmt.setString(2, request.getSession().getAttribute("userid").toString());
+            stmt.setString(3,request.getParameter("oldpassword"));
+            int res=stmt.executeUpdate();
+            request.setAttribute("curuser", User.getUser(request.getSession().getAttribute("userid").toString()));
             
-            stmt.setString(1, request.getSession().getAttribute("userid").toString());
-            stmt.setString(2,request.getParameter("oldpassword"));
-            
-            ResultSet set=stmt.executeQuery();
-            
-            if(set.next()){
-                stmt=con.prepareStatement("update user set password=? where id=?");
-                stmt.setString(1, request.getParameter("newpassword"));
-                stmt.setString(2, request.getSession().getAttribute("userid").toString());
-                stmt.execute();
-                request.setAttribute("curuser", User.getUser(request.getSession().getAttribute("userid").toString()));
-               // getServletConfig().getServletContext().getRequestDispatcher("userabout").forward(request, response);
-                response.sendRedirect("userabout");
+            if(res>0){
+                request.setAttribute("changepassword", "true");    
             }else{
-                request.setAttribute("chngepassword", "fail");
-                //getServletConfig().getServletContext().getRequestDispatcher("userabout").forward(request, response);
-                response.sendRedirect("userabout");
-
+                request.setAttribute("changepassword", "false");
             }
-            
-        } catch (SQLException ex) {
+                response.sendRedirect("userabout");
+        } catch (Exception ex) {
+            request.setAttribute("servererror", "Sorry something went worng");
+            request.getRequestDispatcher("userabout").forward(request, response);
             Logger.getLogger(UpdatePassword.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(UpdatePassword.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
         
     }
 }

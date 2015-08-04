@@ -1,4 +1,3 @@
-Listening for transport dt_socket at address: 9000
 04-Aug-2015 10:39:58.061 SEVERE [main] org.apache.catalina.startup.Catalina.initDirs Cannot find specified temporary folder at /home/cb-admin1/myrepo/training/userDetails/tomcat/temp
 04-Aug-2015 10:39:58.555 WARNING [main] org.apache.catalina.core.StandardContext.setPath A context path must either be an empty string or start with a '/' and do not end with a '/'. The path [/] does not meet these criteria and has been changed to []
 04-Aug-2015 10:39:58.557 WARNING [main] org.apache.tomcat.util.digester.SetPropertiesRule.begin [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'debug' to '0' did not find a matching property.
@@ -123,7 +122,7 @@ Listening for transport dt_socket at address: 9000
 04-Aug-2015 10:51:42.937 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
 04-Aug-2015 10:52:22.941 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
 04-Aug-2015 10:52:23.619 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
-04-Aug-2015 10:52:43.144 SEVERE [http-nio-9090-exec-19] UpdateAddress.doPost null
+04-Aug-2015 10:52:43.144 SEVERE [http-nio-9090-exec-19] null.null null
  java.sql.SQLException: Parameter index out of range (9 > number of parameters, which is 8).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
@@ -157,7 +156,7 @@ Listening for transport dt_socket at address: 9000
 
 04-Aug-2015 10:52:43.621 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] has started
 04-Aug-2015 10:52:44.281 INFO [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload Reloading Context with name [] is completed
-04-Aug-2015 10:52:55.273 SEVERE [http-nio-9090-exec-15] UpdateAddress.doPost null
+04-Aug-2015 10:52:55.273 SEVERE [http-nio-9090-exec-15] null.null null
  java.sql.SQLException: Parameter index out of range (9 > number of parameters, which is 8).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
@@ -189,7 +188,7 @@ Listening for transport dt_socket at address: 9000
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
 
-04-Aug-2015 10:54:47.488 SEVERE [http-nio-9090-exec-22] UpdateAddress.doPost null
+04-Aug-2015 10:54:47.488 SEVERE [http-nio-9090-exec-22] null.null null
  java.sql.SQLException: Parameter index out of range (9 > number of parameters, which is 8).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
@@ -255,7 +254,7 @@ Listening for transport dt_socket at address: 9000
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
 
-04-Aug-2015 10:56:52.061 SEVERE [http-nio-9090-exec-29] UpdateAddress.doPost null
+04-Aug-2015 10:56:52.061 SEVERE [http-nio-9090-exec-29] null.null null
  java.sql.SQLException: Parameter index out of range (9 > number of parameters, which is 8).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
@@ -287,7 +286,7 @@ Listening for transport dt_socket at address: 9000
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
 
-04-Aug-2015 11:00:42.844 SEVERE [http-nio-9090-exec-30] UpdateAddress.doPost null
+04-Aug-2015 11:00:42.844 SEVERE [http-nio-9090-exec-30] null.null null
  java.sql.SQLException: Parameter index out of range (9 > number of parameters, which is 8).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
@@ -319,7 +318,7 @@ Listening for transport dt_socket at address: 9000
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
 
-04-Aug-2015 11:02:26.750 SEVERE [http-nio-9090-exec-31] UpdateAddress.doPost null
+04-Aug-2015 11:02:26.750 SEVERE [http-nio-9090-exec-31] null.null null
  java.sql.SQLException: Parameter index out of range (9 > number of parameters, which is 8).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
@@ -383,7 +382,7 @@ Listening for transport dt_socket at address: 9000
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:745)
 
-04-Aug-2015 11:03:30.042 SEVERE [http-nio-9090-exec-32] UpdateAddress.doPost null
+04-Aug-2015 11:03:30.042 SEVERE [http-nio-9090-exec-32] null.null null
  java.sql.SQLException: Parameter index out of range (9 > number of parameters, which is 8).
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1086)
 	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)

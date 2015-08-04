@@ -25,18 +25,9 @@ public class Utils {
         
         public int value(){
             return type;
-        }
-        
+        }   
     }
     
-    public static String[] getTypes(){
-        String[] val=new String[MobileTypes.values().length];
-        int i=0;
-            for(MobileTypes m:MobileTypes.values()){
-                val[i++]=m.toString();
-        }
-        return val;
-    }
     public static String getUserID(HttpServletRequest request){
         return request.getSession().getAttribute("userid").toString();
     }
