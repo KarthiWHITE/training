@@ -1,6 +1,6 @@
 <project name='userdetails' basedir='../' default='main'>
 
-<property name="src.dir" value="src"/>
+<property name="src.dir" value="src/java"/>
 <property name="class.dir" value="web/WEB-INF/classes"/>
 
 <property name="jar.path" value="tomcat/lib"/>

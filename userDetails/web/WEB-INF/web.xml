@@ -107,4 +107,13 @@
         <servlet-name>chkemail</servlet-name>
         <url-pattern>/chkuser</url-pattern>
 </servlet-mapping>
+
+<servlet>
+    <servlet-name>testServlet</servlet-name>
+    <servlet-class>Test</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>testServlet</servlet-name>
+    <url-pattern>/testing</url-pattern>
+</servlet-mapping>
 </web-app>

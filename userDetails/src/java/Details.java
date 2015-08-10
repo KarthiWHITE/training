@@ -24,8 +24,12 @@ public class Details extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
-        if(request.getSession(false).getAttribute("username")==null){
-            request.getRequestDispatcher("login").forward(request, response);
+        try{
+        int i=Integer.parseInt(request.getSession(false).getAttribute("userid").toString());
+            
+    
+        }catch(NullPointerException ex){
+                request.getRequestDispatcher("login").forward(request, response);
             return;
         }
         request.getRequestDispatcher("useraboutcont").forward(request, response);
